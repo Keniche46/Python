@@ -96,5 +96,7 @@ while True:
         print('-----------------------------')
         print('Escolha uma das opções disponiveis.')
         print('-----------------------------')
+    if len(estoque_1) <= 0:
+        print('Vazio')
     if escolha == 0:
         break
