@@ -25,12 +25,16 @@ while True:
         if escolha_estoque == 1:
             print('-----------------------------')
             print('Seu primeiro estoque:')
+            if len(estoque_1) <= 0:
+                print('Vazio')
             for i in estoque_1:
                 print(i)
             print('-----------------------------')
         if escolha_estoque == 2:
             print('-----------------------------')
             print('Seu segundo estoque:')
+            if len(estoque_2) <= 0:
+                print('Vazio')
             for a in estoque_2:
                 print(a)
             print('-----------------------------')
@@ -96,7 +100,5 @@ while True:
         print('-----------------------------')
         print('Escolha uma das opções disponiveis.')
         print('-----------------------------')
-    if len(estoque_1) <= 0:
-        print('Vazio')
     if escolha == 0:
         break
