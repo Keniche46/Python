@@ -15,18 +15,21 @@ def cadastro():
         print('Insira um nome com mais de 3 caracteres.')
         cadastro()
     else:
-        defi_senha = str(input('Defina uma senha: '))
-        validaçao_senha(defi_senha)
-        res_senha = validaçao_senha(defi_senha)
-        if res_senha:
-            print('-------------------------')
-            print('Usuário cadastrado com sucesso!')
-            users_cadastrado[defi_user] = defi_senha
-            return users_cadastrado
-        else:
-            print('-------------------------')
-            print('Digite uma senha com 8 ou mais caracteres.')
-            cadastro()
+        cadastro_senha(defi_user)
+
+def cadastro_senha(user):
+    defi_senha = str(input('Defina uma senha: '))
+    validaçao_senha(defi_senha)
+    res_senha = validaçao_senha(defi_senha)
+    if res_senha:
+        print('-------------------------')
+        print('Usuário cadastrado com sucesso!')
+        users_cadastrado[user] = defi_senha
+        return users_cadastrado
+    else:
+        print('-------------------------')
+        print('Digite uma senha com 8 ou mais caracteres.')
+        cadastro_senha()
 
 
 def validaçao_user(user):
@@ -47,7 +50,7 @@ def login():
     res = validaçao_login(user_atual)
     if res:
         senha_atual = users_cadastrado[user_atual]
-        senha_inserida = int(input('Insira sua senha: '))
+        senha_inserida = str(input('Insira sua senha: '))
         if senha_inserida == senha_atual:
             print('-------------------------')
             print('Bem-vindo.')
