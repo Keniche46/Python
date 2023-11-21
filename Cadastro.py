@@ -29,7 +29,7 @@ def cadastro_senha(user):
     else:
         print('-------------------------')
         print('Digite uma senha com 8 ou mais caracteres.')
-        cadastro_senha()
+        cadastro_senha(defi_user)
 
 
 def validaçao_user(user):
